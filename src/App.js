@@ -1,12 +1,16 @@
 // Global context management
-import { BrowserRouter } from "react-router-dom";
+import React from "react";
 import Routers from "./routes";
+import { BrowserRouter } from "react-router-dom";
+import './index.css';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routers />
-    </BrowserRouter>
+    <React.StrictMode>
+      <BrowserRouter>
+        <Routers />
+      </BrowserRouter>
+    </React.StrictMode>
   );
 };
 
