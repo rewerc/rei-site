@@ -1,7 +1,7 @@
 // Global context management
-import React from "react";
-import Routers from "./routes";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Routers from './routes';
 import './index.css';
 
 const App = () => {

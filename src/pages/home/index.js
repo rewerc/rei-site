@@ -1,31 +1,39 @@
-import { Typography } from "@mui/material";
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-import { Colors, Fonts } from "../../constants";
+import React, { useEffect } from 'react';
+import { Divider, IconButton, Typography } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Colors, Fonts } from '../../constants';
+import { randomPick } from '../../utils';
+import { LogoWhite } from '../../components/icons';
 
 const theme = createTheme({
-	typography: { fontFamily: Fonts.Moul }
+  typography: { fontFamily: Fonts.Raleway },
 });
 
 const HomePage = () => {
-	return (
-		<ThemeProvider theme={theme}>
-			<div className={`w-full h-screen flex flex-col px-28 bg-[#401F71] pt-16 select-none`}>
-				<div className="w-full flex justify-between">
-					<div className="flex align-center">
-						<Typography>REINALD C.</Typography>
-					</div>
-					<div className="">
+  useEffect(() => {
+    document.title = randomPick([
+      'Reinald.site | Welcome to my official site!',
+      'Reinald.site | Feel free to look around'
+    ]);
+  }, []);
 
-					</div>
-				</div>
-				<div className={`p-12 rounded-[2.5rem] bg-[${Colors.Cream}]`}>
-					<Typography variant="h3">Welcome</Typography>
-					<Typography variant="h3">to</Typography>
-					<Typography variant="h3">Reinald.Site</Typography>
-				</div>
-			</div>
-		</ThemeProvider>
-	);
-}
+  return (
+    <ThemeProvider theme={theme}>
+      <div 
+        className={`w-full h-screen flex flex-col px-8 md:px-28 pt-8 md:pt-16 select-none overflow-clip`}
+        style={{ backgroundColor: Colors.Teal }}
+      >
+        <div className="w-full flex justify-between items-center">
+          <div className="flex items-center justify-center gap-6">
+            <IconButton size="large">
+              <LogoWhite width={30} />
+            </IconButton>
+            <Typography variant="h6" sx={{ color: Colors.White }}>Reinald.site</Typography>
+          </div>
+        </div>
+      </div>
+    </ThemeProvider>
+  );
+};
 
 export default HomePage;
