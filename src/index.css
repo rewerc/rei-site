@@ -6,6 +6,14 @@
   font-family: "Raleway";
   src: local("Raleway"),
     url("./fonts/Raleway/Raleway-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway"),
+    url("./fonts/Raleway/Raleway-Bold.ttf") format("truetype");
+  font-weight: 600;
 }
 
 @font-face {
