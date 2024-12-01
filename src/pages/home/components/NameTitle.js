@@ -18,7 +18,7 @@ const NameTitle = () => {
   }, [curTitle, index]);
 
   return (
-    <Typography variant="h1" className="pl-6" sx={{ color: Colors.White() }}>
+    <Typography variant="h2" className="pl-6" sx={{ color: Colors.White() }}>
       {curTitle}<span style={{ color: Colors.White() }} className="animate-pulse">|</span>
     </Typography>
   )

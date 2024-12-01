@@ -23,7 +23,7 @@ const ModifiedIButton = styled(IconButton)({
   '&:active': { transform: 'scale(1) rotate(360deg)', transition: 'transform .1s ease-out' }
 });
 
-const ProceedButton = () => {
+const ProceedButton = ({ onMouseEnter, onMouseLeave }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -36,8 +36,14 @@ const ProceedButton = () => {
           top: 'calc(50% - 38px)',
           left: 'calc(50% - 38px)',
         }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={() => {
+          onMouseEnter();
+          setIsHovered(true);
+        }}
+        onMouseLeave={() => {
+          onMouseLeave();
+          setIsHovered(false);
+        }}
       >
         {!isHovered ? <LogoBlack width={25} /> : <ArrowForwardIcon fontSize="large" htmlColor={Colors.Black} />}
       </ModifiedIButton>

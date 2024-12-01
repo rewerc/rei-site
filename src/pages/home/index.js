@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -15,6 +15,8 @@ import { FrontPageTheme } from '../../themes';
 const theme = createTheme(FrontPageTheme);
 
 const HomePage = () => {
+  const [isProceedingActive, setIsProceedingActive] = useState(false);
+
   useEffect(() => {
     document.title = randomPick([
       'Reinald.site | Welcome to my official site!',
@@ -45,7 +47,7 @@ const HomePage = () => {
 
           <div className="relative h-3/4 flex mt-8 gap-2">
             <div 
-              className="w-1/2 pl-16 flex flex-col justify-center h-full rounded-3xl" 
+              className="w-1/2 pl-16 flex flex-col justify-center h-full rounded-3xl overflow-hidden" 
               style={{ backgroundColor: Colors.Teal() }}
             >
               <Typography variant="h3" sx={{ color: Colors.White(80) }}>
@@ -53,16 +55,17 @@ const HomePage = () => {
               </Typography>
               <NameTitle />
             </div>
-
             
             <div 
-              className="relative w-1/2 pl-16 flex flex-col justify-center h-full rounded-3xl" 
-              style={{ backgroundColor: Colors.Gray(15) }}
+              className="relative w-1/2 pl-16 flex flex-col justify-center align-center h-full rounded-3xl" 
+              style={{ backgroundColor: isProceedingActive ? Colors.Yellow() : Colors.Gray(15) }}
             >
-
             </div>
 
-            <ProceedButton />
+            <ProceedButton 
+              onMouseEnter={() => setIsProceedingActive(true)} 
+              onMouseLeave={() => setIsProceedingActive(false)} 
+            />
           </div>
         </div>
       </div>
