@@ -5,6 +5,7 @@ const collection = {
   Gray: '#808080',
   OffWhite: '#FAF9F6',
   Purple: '#401F71',
+  SteelBlue: '#426598',
   Teal: '#0c908a',
   White: '#FFFFFF',
   Yellow: '#FFC700',

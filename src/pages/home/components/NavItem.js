@@ -16,8 +16,8 @@ const NavItem = ({ icon, text, url = '#' }) => {
       onClick={() => window.open(url, "_blank")}
       className={`flex justify-center align-end gap-3 p-3 hover:animate-pulse`}
     >
-      <FontAwesomeIcon icon={icon} size="2xl" color={Colors.Black(70)} />
-      <Typography variant="h5" sx={{ fontWeight: 'bold' }}>{text}</Typography>
+      <FontAwesomeIcon icon={icon} size="2xl" color={Colors.White(85)} />
+      <Typography variant="h5" sx={{ fontWeight: 'bold', color: Colors.White(85) }}>{text}</Typography>
     </Container>
   )
 }
