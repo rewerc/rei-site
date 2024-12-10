@@ -29,7 +29,7 @@ const ProceedButton = () => {
       size="small"
       disableRipple
       sx={{ 
-        backgroundColor: Colors.Yellow(),
+        backgroundColor: Colors.White(),
         width: 50,
         minHeight: 50,
         borderRadius: 15,

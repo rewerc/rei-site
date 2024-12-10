@@ -1,6 +1,7 @@
 const Fonts = {
   Raleway: 'Raleway',
-  Moul: 'Moul'
+  Moul: 'Moul',
+  DMSerifDisplay: 'DMSerifDisplay'
 };
 
 export default Fonts;

@@ -17,11 +17,17 @@
 }
 
 @font-face {
+  font-family: "DMSerifDisplay";
+  src: local("DMSerifDisplay"),
+    url("./fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
   font-family: "Moul";
   src: local("Moul"),
     url("./fonts/Moul/Moul-Regular.ttf") format("truetype");
 }
-
 
 body {
   margin: 0;
