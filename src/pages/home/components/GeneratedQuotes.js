@@ -14,7 +14,6 @@ const quotes = [
   'Life doesn\'t get easier or more forgiving, we get stronger and more resilient.',
   'Life has no limitations, except the ones you make.',
   'Quality means doing it right when no one is looking.',
-  'There is nothing noble in being superior to your fellow man; true nobility is being superior to your former self.'
 ];
 
 const GeneratedQuotes = () => {
