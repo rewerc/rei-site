@@ -20,11 +20,11 @@ const LeftPanel = () => {
   }, [curTitle, index]);
 
   return (
-    <div className="w-1/2 pl-40 flex flex-col justify-center h-full rounded-3xl overflow-hidden">
+    <div className="w-1/2 pl-10 xl:pl-40 flex flex-col justify-center h-full rounded-3xl overflow-hidden">
       <Typography variant="h3" sx={{ color: Colors.White(80) }}>
         Welcome to
       </Typography>
-      <Typography variant="h1" className="pl-6" sx={{ color: Colors.White() }}>
+      <Typography variant="h2" className="pl-6" sx={{ color: Colors.White() }}>
         {curTitle}<span style={{ color: Colors.White() }} className="animate-pulse">|</span>
       </Typography>
       <GeneratedQuotes />
