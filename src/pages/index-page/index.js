@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Box, Button, Drawer, Typography } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { Button, Drawer, Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faCircleInfo, faBars } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +19,7 @@ const theme = createTheme(FrontPageTheme);
 
 const IndexPage = () => {
   const isLg = useIsLg();
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   useEffect(() => {
     document.title = randomPick([
@@ -53,7 +54,7 @@ const IndexPage = () => {
                       <NavItem text="About" icon={faCircleInfo} url="" />
                     </>
                   ) : (
-                    <NavItem text="" icon={faBars} url="" /> 
+                    <NavItem icon={faBars} onClick={() => setIsDrawerOpen(true)} /> 
                   )
                 }
               </div>
@@ -61,20 +62,20 @@ const IndexPage = () => {
             </div>
           </div>
 
-          <div className="relative h-3/4 flex flex-col lg:flex-row mt-8 gap-2">
+          <div className="relative h-full lg:h-3/4 flex flex-col lg:flex-row mt-8 gap-2">
             <LeftPanel />
             <RightPanel />
           </div>
         </div>
       </div>
 
-      {/* <Drawer open>
-        <div style={{ width: 300, background: Colors.White(50) }} className="flex flex-col gap-5 justify-around p-5" role="presentation">
-          <NavItem text="LinkedIn" icon={faLinkedin} url="https://id.linkedin.com/in/reinald-chenartha" />
-          <NavItem text="Instagram" icon={faInstagram} url="https://www.instagram.com/justreinald/" />
-          <NavItem text="About" icon={faCircleInfo} url="" />
+      <Drawer open={isDrawerOpen && !isLg} onClose={() => setIsDrawerOpen(false)}>
+        <div style={{ width: 340 }} className="flex flex-col items-start p-5 gap-5" role="presentation">
+          <NavItem color={Colors.Teal()} text="LinkedIn" icon={faLinkedin} url="https://id.linkedin.com/in/reinald-chenartha" />
+          <NavItem color={Colors.Teal()} text="Instagram" icon={faInstagram} url="https://www.instagram.com/justreinald/" />
+          <NavItem color={Colors.Teal()} text="About" icon={faCircleInfo} url="" />
         </div>
-      </Drawer> */}
+      </Drawer>
     </ThemeProvider>
   );
 };

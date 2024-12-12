@@ -40,7 +40,7 @@ const RightPanel = () => {
   return (
     <motion.div 
       ref={scope} 
-      className="relative w-full lg:w-1/2 px-5 lg:pl-16 flex flex-col gap-3 justify-center align-center h-full rounded-3xl pr-10"
+      className="relative w-full lg:w-1/2 px-5 lg:pl-16 flex flex-col gap-3 justify-center align-center h-full rounded-3xl lg:pr-10"
       style={{ color: Colors.White() }}
     >
       <div className="w-full h-1/3 flex justify-center gap-3">
@@ -50,7 +50,7 @@ const RightPanel = () => {
           style={{ border: `2px solid ${Colors.White(90)}` }}
         >
           <div className="h-4/6 flex justify-center items-center flex-col gap-5" style={{ color: 'inherit' }}>
-            <FontAwesomeIcon icon={faCode} color="inherit" fontSize="3rem" />
+            <FontAwesomeIcon icon={faCode} color="inherit" fontSize="3rem" style={{ paddingTop: '1rem' }} />
             <Typography
               name="code-text"
               component={motion.div}

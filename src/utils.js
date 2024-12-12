@@ -10,3 +10,7 @@ export const getRandomNumber = (max, exception = null) => {
 export const randomPick = (array) => {
   return array[getRandomNumber(array.length)];
 };
+
+export const sleep = (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
