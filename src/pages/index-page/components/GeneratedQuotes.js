@@ -34,8 +34,8 @@ const GeneratedQuotes = () => {
   }, [index]);
 
   return (
-    <div className="w-3/4 mt-14 flex min-h-32">
-      <div className="self-start relative top-2">
+    <div className="w-full md:w-3/4 px-8 md:px-0 mt-20 md:mt-14 flex min-h-32">
+      <div className="self-start relative -top-2 md:top-2">
         <FontAwesomeIcon icon={faQuoteLeft} fontSize="1.5rem" color={Colors.White(85)} />
       </div>
       <motion.div ref={scope} className="w-full h-full flex justify-center align-center relative">
@@ -56,7 +56,7 @@ const GeneratedQuotes = () => {
           ))
         }
       </motion.div>
-      <div className="self-end relative bottom-2">
+      <div className="self-end relative -bottom-2 md:bottom-2">
         <FontAwesomeIcon icon={faQuoteRight} fontSize="1.5rem" color={Colors.White(85)} />
       </div>
     </div> 

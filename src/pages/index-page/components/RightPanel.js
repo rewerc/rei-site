@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { motion, useAnimate, MotionConfig } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
 import { Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faCropSimple, faPenNib } from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +12,6 @@ const HighlightBox = ['code', 'design', 'article'];
 const RightPanel = () => {
   const [scope, animate] = useAnimate();
   const [index, setIndex] = useState(0);
-  const [isInitialDone, setIsInitialDone] = useState(false);
   
   const handleAnimation = async () => {
     const selector = `div[name="${HighlightBox[index]}"]`;
@@ -41,7 +40,7 @@ const RightPanel = () => {
   return (
     <motion.div 
       ref={scope} 
-      className="relative w-1/2 pl-16 flex flex-col gap-3 justify-center align-center h-full rounded-3xl pr-10"
+      className="relative w-full lg:w-1/2 px-5 lg:pl-16 flex flex-col gap-3 justify-center align-center h-full rounded-3xl pr-10"
       style={{ color: Colors.White() }}
     >
       <div className="w-full h-1/3 flex justify-center gap-3">
@@ -58,7 +57,7 @@ const RightPanel = () => {
               variant="h6" 
               initial={{ opacity: 0, marginTop: '-35%' }}
             >
-              DEVELOPMENTS
+              CODE
             </Typography>
           </div>
         </motion.div>
@@ -75,7 +74,7 @@ const RightPanel = () => {
               variant="h6" 
               initial={{ opacity: 0, marginTop: '-35%' }}
             >
-              DESIGNS
+              DESIGN
             </Typography>
           </div>
         </motion.div>
@@ -92,7 +91,7 @@ const RightPanel = () => {
               variant="h6" 
               initial={{ opacity: 0, marginTop: '-35%' }}
             >
-              ARTICLES
+              ARTICLE
             </Typography>
           </div>
         </motion.div>
