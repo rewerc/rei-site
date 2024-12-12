@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { Button, Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
 import NavItem from './components/NavItem';
 import LeftPanel from './components/LeftPanel';
@@ -46,9 +47,9 @@ const HomePage = () => {
             </div>
             <div className="flex align-center justify-center gap-14">
               <div className="flex justify-end align-center gap-14">
-                <NavItem text="LinkedIn" icon={faLinkedin} url="" />
-                <NavItem text="GitHub" icon={faGithub} url="" />
-                <NavItem text="Instagram" icon={faInstagram} url="" />
+                <NavItem text="LinkedIn" icon={faLinkedin} url="https://id.linkedin.com/in/reinald-chenartha" />
+                <NavItem text="Instagram" icon={faInstagram} url="https://www.instagram.com/justreinald/" />
+                <NavItem text="About" icon={faCircleInfo} url="" />
               </div>
               <ProceedButton />
             </div>

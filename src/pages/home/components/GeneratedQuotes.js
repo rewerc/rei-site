@@ -20,18 +20,18 @@ const GeneratedQuotes = () => {
   const [index, setIndex] = useState(getRandomNumber(quotes.length));
   const [scope, animate] = useAnimate();
 
+  const handleAnimation = async () => {
+    const nextIndex = getRandomNumber(quotes.length, index);
+    await animate(`div[name="quote-${nextIndex}"]`, { display: 'block', opacity: 0 }, { duration: 0, delay: 5 });
+    animate(`div[name="quote-${index}"]`, { x: '-100%', opacity: 0 }, { duration: 1, ease: 'easeInOut' });
+    await animate(`div[name="quote-${nextIndex}"]`, { x: 0, display: 'block', opacity: 1 }, { duration: 1, ease: 'easeInOut' });
+    await animate(`div[name="quote-${index}"]`, { display: 'none', x: '100%' }, { duration: 0 })
+    setIndex(nextIndex)
+  };
+
   useEffect(() => {
-    const handleAnimate = async () => {
-      const nextIndex = getRandomNumber(quotes.length, index);
-      await animate(`div[name="quote-${nextIndex}"]`, { display: 'block', opacity: 0 }, { duration: 0 });
-      animate(`div[name="quote-${index}"]`, { x: '-100%', opacity: 0 }, { duration: 1, ease: 'easeInOut' });
-      await animate(`div[name="quote-${nextIndex}"]`, { x: 0, display: 'block', opacity: 1 }, { duration: 1, ease: 'easeInOut' });
-      await animate(`div[name="quote-${index}"]`, { display: 'none', x: '100%' }, { duration: 0 })
-      setIndex(nextIndex)
-    };
-    const interval = setInterval(handleAnimate, 5000);
-    return () => clearInterval(interval);
-  }, [animate, index]);
+    handleAnimation();
+  }, [index]);
 
   return (
     <div className="w-3/4 mt-14 flex min-h-32">
