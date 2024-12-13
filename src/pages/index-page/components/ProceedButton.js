@@ -54,15 +54,15 @@ const ProceedButton = () => {
       <div className="flex items-center">
         <div className="absolute left-5 flex items-center justify-center">
           {isClicked 
-            ? <CircularProgress size={40} thickness={10} color="info" sx={{ position: 'relative', left: -8 }} /> 
-            : <FontAwesomeIcon icon={faRightFromBracket} size="2xl" color={Colors.Black(70)} />}
+            ? <CircularProgress size={40} thickness={5} color="info" sx={{ position: 'relative', left: -8 }} /> 
+            : <FontAwesomeIcon icon={faRightFromBracket} size="2xl" color={Colors.Teal()} />}
         </div>
         <Typography
           name="proceed-text"
           component={motion.div}
           variant="h6"
           sx={{ 
-            color: Colors.Black(70), 
+            color: Colors.Teal(), 
             display: 'none', 
             fontWeight: 'bold',
             whiteSpace: 'nowrap',

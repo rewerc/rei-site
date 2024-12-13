@@ -39,7 +39,7 @@ const IndexPage = () => {
                 sx={{ padding: '20px 40px',  display: 'flex',  gap: 2,  minWidth: 110 }}
               >
                 <LogoWhite width={30} />
-                <Typography variant="h5" className="drop-shadow-2xl hidden lg:block pl-8" sx={{ color: Colors.White(), fontWeight: 'bold' }}>
+                <Typography variant="h5" className="drop-shadow-2xl hidden xl:block pl-8" sx={{ color: Colors.White(), fontWeight: 'bold' }}>
                   Reinald.site
                 </Typography>
               </Button>
